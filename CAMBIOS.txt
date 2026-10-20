@@ -1,0 +1,30 @@
+REDISEÑO MID-FI — 16/10/2026
+
+Modificado: app/CONTEXTO_PROYECTO.md
+Modificado: app/src/main/java/cl/duoc/redpatrimonio/navigation/AppNavigation.kt
+Modificado: app/src/main/java/cl/duoc/redpatrimonio/ui/theme/Color.kt
+Modificado: app/src/main/java/cl/duoc/redpatrimonio/ui/theme/Theme.kt
+Modificado: app/src/main/java/cl/duoc/redpatrimonio/ui/theme/Type.kt
+Modificado: app/src/main/java/cl/duoc/redpatrimonio/view/CatalogoScreens.kt
+Modificado: app/src/main/java/cl/duoc/redpatrimonio/view/ComponentesPatrimonio.kt
+Modificado: app/src/main/java/cl/duoc/redpatrimonio/view/GestionScreens.kt
+Modificado: app/src/main/java/cl/duoc/redpatrimonio/view/HomeScreen.kt
+Nuevo: app/src/main/java/cl/duoc/redpatrimonio/view/IconosPatrimonio.kt
+Modificado: app/src/main/java/cl/duoc/redpatrimonio/view/LoginScreen.kt
+Modificado: app/src/main/java/cl/duoc/redpatrimonio/view/PatrimonioEmblem.kt
+Modificado: app/src/main/java/cl/duoc/redpatrimonio/view/RutasScreens.kt
+Modificado: app/src/main/java/cl/duoc/redpatrimonio/view/VisitasScreens.kt
+Nuevo: app/src/main/res/font/inter_medium.ttf
+Nuevo: app/src/main/res/font/inter_regular.ttf
+Nuevo: app/src/main/res/font/inter_semibold.ttf
+Nuevo: app/src/main/res/font/poppins_bold.ttf
+Nuevo: app/src/main/res/font/poppins_medium.ttf
+Nuevo: app/src/main/res/font/poppins_semibold.ttf
+Nuevo: DISENO_MIDFI.txt
+Modificado: LEEME_PRIMERO.txt
+Nuevo: licenses/Inter-OFL.txt
+Nuevo: licenses/Poppins-OFL.txt
+Modificado: PRUEBAS_Y_ALCANCE.txt
+Modificado: CAMBIOS.txt
+
+Modelo, ViewModels, Gradle y tests originales conservados.

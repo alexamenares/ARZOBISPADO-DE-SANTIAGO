@@ -1,0 +1,77 @@
+VALIDACIÓN Y ALCANCE — RED DE PATRIMONIO RELIGIOSO
+
+VALIDACIÓN REALIZADA AQUÍ
+- Inspección del código y de sus conexiones de navegación.
+- Comprobaciones estáticas de delimitadores, declaraciones/imports internos y destinos.
+- Comparación de hashes para conservar Gradle y dependencias.
+- Verificación de integridad del ZIP y exclusión de cachés y local.properties.
+Estas comprobaciones no equivalen a compilar ni a ejecutar Android.
+
+VERIFICACIÓN VISUAL DEL REDISEÑO (PENDIENTE)
+- Revisar Login y la introducción, luego los paneles de los cinco perfiles.
+- Comparar colores y composición con el PDF corregido y el mockup Figma.
+- Recorrer las pestañas de ficha y comprobar el botón de favoritos.
+- Crear ruta: nombre > recintos > orden > guardar; Atrás vuelve al paso anterior.
+- Solicitar visita: datos > guía > revisión > enviar > Ver mis visitas.
+- Comprobar filtros de visitas y abrir Ver detalle para las acciones de coordinación.
+- Alternar días en la agenda del guía; comprobar error si existe una visita asignada.
+- Probar 320/360 dp, orientación horizontal, texto al 150%, teclado y botón Atrás.
+- Verificar rutas/favoritos existentes al actualizar una instalación compatible.
+
+VALIDACIÓN PENDIENTE EN EL OTRO COMPUTADOR
+Desde la terminal de Android Studio en la carpeta raíz, con JDK/SDK configurados:
+  .\gradlew.bat testDebugUnitTest
+  .\gradlew.bat assembleDebug
+  .\gradlew.bat lintDebug
+Con emulador o dispositivo conectado, API 36 o superior:
+  .\gradlew.bat connectedDebugAndroidTest
+
+Pruebas existentes conservadas:
+- ReglasPatrimonioTest: 11 tests de búsqueda, filtros, rutas, fechas, cantidades y tiempos.
+- DemoIntegrationTest: 6 tests de persistencia, separación entre cuentas, permisos,
+  solicitud con guía, conflictos de disponibilidad, historial y recuperación del almacén.
+No se ejecutaron aquí. Los tests de ejemplo originales también se conservan.
+
+RECORRIDO MANUAL SUGERIDO
+1. Ingresar con admin y una contraseña incorrecta: debe aparecer el error.
+2. Entrar con visitante / 123: comprobar Inicio, Explorar, Rutas, Visitas y Perfil.
+3. Buscar NUNOA: debe aparecer Capilla del Parque. Activar Solo abiertos: se excluye
+   porque su estado de ejemplo es En celebración.
+4. Abrir una ficha, marcar favorito, cerrar sesión y entrar como visitante otra vez:
+   debe conservarse. Como docente no debe aparecer el favorito del visitante.
+5. Crear una ruta con Templo San Gabriel y Museo del Encuentro; cambiar el orden y guardar.
+6. Ver detalle y realizar el recorrido manual hasta finalizar.
+7. Probar ruta con una sola parada o sin nombre: debe mostrar validación.
+8. Planificar visita para mañana a las 10:00, 20 personas y Entrada principal, con guía.
+9. Probar fecha inválida (2030-02-30), hora 24:00, cantidad 0/51 o encuentro vacío:
+   no deben guardarse solicitudes inválidas.
+10. Entrar como guia: agregar la misma fecha a disponibilidad y aceptar la solicitud.
+11. Entrar como admin: confirmar la visita. Como solicitante debe verse Confirmada.
+12. Crear una segunda solicitud para ese mismo día: el guía no debe aceptar dos recorridos.
+13. Cancelar la primera visita como solicitante o administrador: queda en el historial.
+14. Intentar editar o borrar una ruta con visitas: debe impedirse para conservar el historial.
+15. Como encargado, cerrar Templo San Gabriel y publicar un evento para una fecha futura.
+16. Como visitante, verificar el nuevo estado y evento; una visita que incluya el recinto
+    cerrado debe ser rechazada. Como encargado, volver a abrirlo para seguir la demo.
+17. Cancelar un evento: desaparece de la lista de próximos y aparece al incluir cancelados.
+18. Cerrar completamente la app y abrirla: solicitará login y mantendrá los datos guardados.
+19. Probar pantalla pequeña, teclado abierto, giro del dispositivo y texto aumentado.
+20. Como admin, restablecer datos con confirmación: elimina cambios de TODOS los perfiles.
+
+FUERA DE ESTA ENTREGA
+- Backend, REST/Retrofit, Room/SQLite y conexión al modelo Oracle.
+- Registro real, recuperación de contraseña, Google, JWT y seguridad de producción.
+- GPS, mapas reales, distancias y navegación geográfica.
+- Multimedia real (fotografías, audio, video), cámara, notificaciones y sincronización.
+- CRUD de instituciones, asignación dinámica de encargados y múltiples guías.
+- Agenda real con bloques horarios, aforo y reservas en recintos externos.
+- APK firmado de entrega: se genera después de compilar y validar en Android Studio.
+El esquema de datos de la demo simplifica el modelo relacional suministrado; se debe
+mapear al backend cuando se autorice esa etapa. El docente comparte el flujo de visitas
+con el visitante. El guía de ejemplo trabaja por días completos.
+
+ORDEN PARA LA SIGUIENTE ETAPA
+1. Compilar, ejecutar tests y corregir los errores reales que entregue Android Studio.
+2. Revisar visualmente Login, catálogo, formularios y pantallas por rol en el emulador.
+3. Confirmar con el profesor el alcance del próximo hito.
+4. Integrar backend, almacenamiento y servicios externos de manera progresiva.

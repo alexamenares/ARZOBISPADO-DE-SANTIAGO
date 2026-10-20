@@ -1,0 +1,85 @@
+RED DE PATRIMONIO RELIGIOSO — DEMOSTRACIÓN LOCAL
+Entrega: 16 de octubre de 2026 — rediseño Mid-Fi
+
+ESTADO DE LA ENTREGA
+El usuario confirmó que la entrega anterior funcionó en su otro computador.
+Esta entrega actualiza la interfaz según el wireframe correcto y el mockup de Figma.
+El rediseño fue revisado estáticamente, pero NO compilado ni ejecutado aquí:
+este computador no dispone de JDK ni Android SDK. No se incluye un APK.
+La comprobación de compilación y apariencia queda pendiente en Android Studio.
+
+QUÉ CAMBIÓ EN ESTA ENTREGA
+- Terracota #B85C38, dorado #C9A227, fondo crema #F5F1EA y tarjetas blancas.
+- Poppins para títulos e Inter para textos, incluidas localmente con sus licencias.
+- Login con cabecera de marca, selector de perfil demo e introducción de tres páginas.
+- Inicio del visitante con búsqueda, destacados, rutas y eventos, siguiendo Figma.
+- Paneles de guía y gestión con indicadores calculados desde los datos locales.
+- Barra inferior adaptada al perfil e iconos vectoriales.
+- Ficha con ilustración, favorito y pestañas de información/historia/horarios/eventos/avisos.
+- Creación de rutas en tres pasos: nombre, recintos y orden.
+- Solicitud de visita en tres pasos, con revisión y resultado de envío.
+- Visitas con filtros de estado y detalle desplegable; agenda semanal del guía.
+La lógica, las cuentas y el formato de almacenamiento se mantienen sin cambios.
+Ver DISENO_MIDFI.txt para las referencias y adaptaciones del prototipo.
+
+CÓMO LLEVARLO AL OTRO COMPUTADOR
+1. Copia el ZIP RedPatrimonioReligioso_MidFi.zip y descomprímelo en una carpeta nueva.
+2. En Android Studio, usa Open y selecciona RedPatrimonioReligioso, donde está settings.gradle.kts.
+3. Deja que termine la sincronización de Gradle. El primer uso puede requerir Internet.
+4. Configura el SDK instalado en ESE computador. El ZIP no incluye local.properties ni
+   las carpetas de caché del equipo anterior. Android Studio puede generar la ruta local.
+5. Conserva inicialmente las versiones recibidas del proyecto. No aceptes migraciones
+   de dependencias como primer paso para resolver un error.
+6. Usa un emulador o dispositivo API 36 o superior. Pulsa Run para iniciar la aplicación.
+7. Ejecuta las pruebas y los recorridos manuales descritos en PRUEBAS_Y_ALCANCE.txt.
+
+CONFIGURACIÓN ORIGINAL CONSERVADA
+- Paquete: cl.duoc.redpatrimonio
+- Kotlin, Compose, Material 3 y MVVM.
+- minSdk 36; compileSdk y targetSdk 37.
+- Gradle Wrapper 9.6.0; Android Gradle Plugin 9.4.1.
+- Toolchain del daemon: Java 25, según gradle/gradle-daemon-jvm.properties.
+- Compatibilidad de código Java configurada originalmente en 11.
+No se cambiaron Gradle, versiones ni dependencias. Si el otro equipo no puede obtener
+alguna versión, conserva el mensaje exacto de sincronización para resolverlo por separado.
+
+CUENTAS PARA PROBAR
+Escribe el nombre de cuenta en el campo de correo. Contraseña para TODAS: 123.
+visitante  -> catálogo, fichas, favoritos, rutas y solicitudes propias.
+docente    -> el mismo recorrido de consulta y planificación de salidas educativas.
+guia       -> disponibilidad por día, solicitudes con guía y aceptación/rechazo.
+encargado  -> edición del recinto 1 y sus eventos.
+admin      -> edición de todos los recintos, coordinación de visitas y reinicio de la demo.
+La cuenta original admin / 123 se conserva. Son perfiles de demostración, no seguridad real.
+Para cambiar de cuenta, entra a Perfil > Cerrar sesión. El acceso vuelve a solicitarse
+si Android termina el proceso; los datos guardados se conservan.
+
+QUÉ PUEDES PROBAR
+- Inicio y navegación entre los módulos.
+- Búsqueda por nombre, tipo y comuna, con filtros de apertura y sin distinguir tildes.
+- Fichas con historia, horarios, estado y avisos; consulta de eventos.
+- Favoritos por cuenta, conservados localmente.
+- Crear, editar y eliminar rutas personales, seleccionar y ordenar 2 a 6 paradas.
+- Seguir un recorrido de demostración avanzando manualmente por sus paradas.
+- Solicitar visitas, validar fecha/hora/cantidad y cancelar conservando el historial.
+- Indicar disponibilidad del guía, aceptar/rechazar y confirmar como administrador.
+- Editar fichas y publicar, editar o cancelar eventos según el perfil.
+- Restablecer la demostración desde el perfil de administrador, con confirmación.
+
+DATOS LOCALES
+SharedPreferences + JSON, sin dependencias nuevas. No se guardan contraseñas.
+Se conservan los cambios de los cinco perfiles en una misma instalación para ensayar
+la coordinación. El ZIP lleva el código, no los datos creados en un teléfono.
+Desinstalar la app o borrar su almacenamiento puede eliminar los datos de prueba.
+Los tests instrumentados usan un almacén distinto, para no borrar la demostración.
+
+MAPAS Y TIEMPOS
+El mapa es un esquema ilustrativo, sin GPS ni distancias geográficas reales.
+Tiempo de referencia: 25 minutos por recinto + 15 entre paradas. No usar para viajes reales.
+La disponibilidad del guía es por jornada completa, con un recorrido por día.
+Los horarios de recintos se editan como texto; no se comprueban automáticamente contra
+la hora de la visita. Se exige que los recintos estén en estado ABIERTO al solicitar y confirmar.
+
+CÓMO CONTINUAR
+Ver app/CONTEXTO_PROYECTO.md para la estructura actual y PRUEBAS_Y_ALCANCE.txt para
+validación y módulos que quedan fuera de esta entrega. CAMBIOS.txt lista los archivos.

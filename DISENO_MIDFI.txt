@@ -1,0 +1,44 @@
+REDISEÑO MID-FI — 16/10/2026
+
+REFERENCIAS DEL USUARIO
+- Wireframe Mid-Fi App Móvil.pdf: 6 láminas de exploración, rutas, visitas,
+  guía, fundamentos visuales y acceso. Se revisaron las seis páginas renderizadas.
+- Mockup funcional Figma Make:
+  https://www.figma.com/make/gJt6B3k7qCg9PO0Rn95r0u/Mockup-funcional-de-app
+  Se inspeccionó la vista previa interactiva (acceso, visitante, ficha, guía y gestión).
+
+CRITERIOS APLICADOS
+Paleta: terracota B85C38; dorado C9A227; crema F5F1EA; texto 2B2B2B;
+secundario 6B6B6B; blanco para tarjetas. Espaciado base 8/16 dp, esquinas 8–16 dp.
+Poppins para títulos e Inter para cuerpo, incluidas en res/font para uso sin conexión.
+El inicio Figma muestra búsqueda, destacados, rutas y eventos. Se adoptó esa estructura;
+el mapa ilustrativo queda accesible desde Explorar y desde el inicio.
+Las fichas usan cabecera ilustrada, favorito y pestañas. Rutas y solicitudes de visita
+se separan en pasos para evitar formularios largos. El guía tiene agenda de siete días
+más entrada de otras fechas. Las barras inferiores responden a cada perfil.
+
+ADAPTACIONES AL ALCANCE AUTORIZADO
+Se conserva el modelo demo y los ViewModels existentes, sin migración de datos.
+Los datos y las ilustraciones son referenciales: no son fotos ni ubicaciones reales.
+El recorrido avanza manualmente; duración calculada con la regla académica existente.
+Los detalles de visitas se despliegan dentro de la lista, conservando las acciones.
+La introducción se abre desde «Conoce la red». La ayuda de acceso explica las cuentas
+simuladas; no se finge envío de correo, registro real ni inicio con Google.
+No se añadió multimedia, mensajería, GPS, backend ni nuevos campos persistentes.
+La disponibilidad mantiene jornadas completas y un recorrido por día.
+Estas adaptaciones no constituyen una reproducción exacta de todas las pantallas Figma.
+
+RECURSOS TIPOGRÁFICOS
+Fuente: repositorio oficial Google Fonts, carpetas ofl/poppins y ofl/inter:
+https://github.com/google/fonts/tree/main/ofl/poppins
+https://github.com/google/fonts/tree/main/ofl/inter
+Poppins Medium/SemiBold/Bold originales. Inter: instancias estáticas 400/500/600,
+opsz 14, generadas del archivo variable con fontTools durante la preparación.
+Las herramientas de preparación no son dependencias de la app.
+Licencias SIL Open Font License 1.1 incluidas en licenses/.
+
+VALIDACIÓN
+Revisión estática de fuentes, navegación, recursos y archivos protegidos.
+Sin compilación, emulador ni validación visual de Compose en este computador.
+El usuario confirmó funcionamiento de la versión anterior; debe validar este rediseño
+con Android Studio. Ver PRUEBAS_Y_ALCANCE.txt.
