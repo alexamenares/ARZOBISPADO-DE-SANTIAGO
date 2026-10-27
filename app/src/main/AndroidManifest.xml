@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+AndroidManifest.xml presenta la aplicación al sistema Android.
+Declara su configuración, la actividad de entrada y metadatos que usan bibliotecas.
+application agrupa ajustes generales; activity registra una pantalla administrada por Android.
+Esta app usa una sola actividad, MainActivity, y sus pantallas internas son funciones Compose.
+Para explicarlo: el manifiesto registra la app; los archivos Kotlin construyen su interfaz.
+El QR actual delega la cámara a Google Play Services y no solicita CAMERA desde nuestra app.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <!--
+        Configuración general: nombre desde strings.xml, iconos desde mipmap y tema XML.
+        allowBackup habilita la participación en las copias de Android; las reglas se indican abajo.
+        supportsRtl permite adaptar la dirección visual a idiomas que escriben de derecha a izquierda.
+        Los atributos van dentro de la etiqueta de apertura; los elementos hijos van después del signo >.
+    -->
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RedPatrimonioReligioso">
+
+        <!-- Solicita la descarga anticipada del módulo de escaneo QR de Google. -->
+        <!--
+            Solicita a Google Play Services la preparación del módulo barcode_ui.
+            La descarga anticipada está prevista para la instalación desde Google Play.
+            En una instalación de prueba el módulo puede necesitar descargarse al primer uso.
+            Este dato no contiene el QR leído ni guarda información del recinto.
+        -->
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="barcode_ui" />
+
+        <!--
+            MainActivity es la clase Kotlin que Android abre al iniciar la app.
+            exported=true permite al lanzador del sistema iniciar esta actividad.
+            adjustResize solicita ajustar la ventana cuando aparece el teclado.
+            El tema XML prepara la ventana; RedPatrimonioReligiosoTheme aplica el diseño Compose.
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.RedPatrimonioReligioso"
+            android:windowSoftInputMode="adjustResize">
+
+            <!--
+                MAIN y LAUNCHER identifican esta actividad como entrada desde el icono de la app.
+                No describen la navegación entre LoginScreen, HomeScreen o las fichas: eso está en AppNavigation.
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

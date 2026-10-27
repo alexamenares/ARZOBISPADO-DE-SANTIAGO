@@ -1,0 +1,9 @@
+<!--
+strings.xml contiene textos identificados como recursos Android.
+app_name se utiliza en el manifiesto para el nombre visible de la aplicación.
+R.string.app_name o @string/app_name son formas de referirse a ese recurso.
+Muchos textos de la demo están escritos directamente en las funciones Compose.
+-->
+<resources>
+    <string name="app_name">RedPatrimonioReligioso</string>
+</resources>

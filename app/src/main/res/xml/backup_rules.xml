@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+backup_rules.xml declara reglas para el mecanismo de copias de seguridad de Android.
+Se referencia mediante fullBackupContent en AndroidManifest.xml.
+Los ejemplos include y exclude están comentados: no son reglas activas.
+Este archivo no ejecuta consultas ni configura la tabla Room.
+-->
+<!--
+   Sample backup rules file; uncomment and customize as necessary.
+   See https://developer.android.com/guide/topics/data/autobackup
+   for details.
+   Note: This file is ignored for devices older than API 31
+   See https://developer.android.com/about/versions/12/backup-restore
+-->
+<full-backup-content>
+    <!--
+   <include domain="sharedpref" path="."/>
+   <exclude domain="sharedpref" path="device.xml"/>
+-->
+</full-backup-content>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+themes.xml define el tema de la ventana Android, referenciado por el manifiesto.
+El tema base claro NoActionBar evita la barra de título tradicional de Android.
+La barra de la app se dibuja con Compose en AppNavigation.
+Los colores, fuentes y formas de los componentes se configuran en ui/theme/Theme.kt.
+-->
+<resources>
+
+    <style name="Theme.RedPatrimonioReligioso" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>
